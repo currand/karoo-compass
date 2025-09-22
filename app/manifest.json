@@ -1,0 +1,9 @@
+{
+    "label": "Karoo Template",
+    "packageName": "com.currand60.karooexttemplate",
+    "latestApkUrl": "https://github.com/currand/karoo-ext-template/releases/latest/download/app-release.apk",
+    "latestVersion": "0.0.0",
+    "latestVersionCode": 25092201,
+    "developer": "currand",
+    "description": "Template Karoo Extension"
+}
