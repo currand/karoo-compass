@@ -1,16 +1,11 @@
 package com.currand60.karoocompass.data
 
-import android.content.Context
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
-import androidx.glance.appwidget.GlanceRemoteViews
-import com.currand60.karoocompass.KarooSystemServiceProvider
 import io.hammerhead.karooext.extension.DataTypeImpl
 import io.hammerhead.karooext.internal.Emitter
-import io.hammerhead.karooext.internal.ViewEmitter
 import io.hammerhead.karooext.models.DataPoint
 import io.hammerhead.karooext.models.DataType
 import io.hammerhead.karooext.models.StreamState
-import io.hammerhead.karooext.models.ViewConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -32,7 +27,6 @@ fun convertToSlope(pitch: Float): Double {
 
 @OptIn(ExperimentalGlanceRemoteViewsApi::class)
 class PitchDataType (
-    private val karooSystem: KarooSystemServiceProvider,
     extension: String,
     private val compassProvider: CompassProvider
 ) : DataTypeImpl(extension, TYPE_ID) {
@@ -42,23 +36,6 @@ class PitchDataType (
     }
 
     private val dataScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-
-    private fun previewFlow(constantValue: Double? = null): Flow<StreamState> = flow {
-        while (true) {
-            val value = constantValue ?: ((-12..12).random()).toDouble()
-            emit(StreamState.Streaming(
-                DataPoint(
-                    dataTypeId,
-                    mapOf(DataType.Field.SPEED to value),
-                    extension
-                )
-            ))
-            delay(1000)
-        }
-    }.flowOn(Dispatchers.IO)
-
-    override fun startView(context: Context, config: ViewConfig, emitter: ViewEmitter) {
-    }
 
     override fun startStream(emitter: Emitter<StreamState>) {
         val job = dataScope.launch {

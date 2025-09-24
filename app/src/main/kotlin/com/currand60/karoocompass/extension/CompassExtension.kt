@@ -17,9 +17,9 @@ class CompassExtension : KarooExtension("karoocompass", "1.0") {
 
     override val types by lazy {
         listOf(
-            DegreesDataType(karooSystem, extension, compassProvider),
-            CardinalDirectionDataType(karooSystem, extension, compassProvider),
-            PitchDataType(karooSystem, extension, compassProvider)
+            DegreesDataType(extension, compassProvider),
+            CardinalDirectionDataType(extension, compassProvider),
+            PitchDataType(extension, compassProvider)
         )
     }
 

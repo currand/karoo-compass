@@ -11,7 +11,6 @@ import io.hammerhead.karooext.models.StreamState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import timber.log.Timber
@@ -43,7 +42,7 @@ class CompassProvider(
     private var isStreaming = false
     private var streamCount = 0
 
-    var currentPitch: Int = 0
+    var currentPitch: Float = 0.0f
     var currentHeading: Int = 0
 
     fun streamCompassData() {
@@ -116,10 +115,10 @@ class CompassProvider(
                     val pitch = Math.toDegrees(orientationAngles[1].toDouble()).toFloat()
 
                     val roundedAzimuth = azimuth.roundToInt()
-                    val roundedPitch = pitch.roundToInt()
+
 
                     currentHeading = roundedAzimuth
-                    currentPitch = roundedPitch
+                    currentPitch = pitch
                 }
             }
         }
@@ -157,6 +156,15 @@ class CompassProvider(
                 )
             } else {
                 emit(StreamState.NotAvailable)
+            }
+            delay(1000)
+        }
+    }.flowOn(Dispatchers.IO)
+
+    fun getPitchValueFlow(): Flow<Float> = flow {
+        while(true) {
+            if (hasGravityData && hasGeomagneticData) {
+                emit(currentPitch)
             }
             delay(1000)
         }

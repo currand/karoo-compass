@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.compose.ui.unit.DpSize
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import androidx.glance.appwidget.GlanceRemoteViews
-import com.currand60.karoocompass.KarooSystemServiceProvider
 import com.currand60.karoocompass.screens.CardinalView
 import io.hammerhead.karooext.extension.DataTypeImpl
 import io.hammerhead.karooext.internal.Emitter
@@ -13,7 +12,6 @@ import io.hammerhead.karooext.models.DataPoint
 import io.hammerhead.karooext.models.DataType
 import io.hammerhead.karooext.models.StreamState
 import io.hammerhead.karooext.models.UpdateGraphicConfig
-import io.hammerhead.karooext.models.UpdateNumericConfig
 import io.hammerhead.karooext.models.ViewConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,7 +27,6 @@ import timber.log.Timber
 
 @OptIn(ExperimentalGlanceRemoteViewsApi::class)
 class CardinalDirectionDataType (
-    private val karooSystem: KarooSystemServiceProvider,
     extension: String,
     private val compassProvider: CompassProvider
 ) : DataTypeImpl(extension, TYPE_ID) {

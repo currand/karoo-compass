@@ -19,13 +19,10 @@ import androidx.glance.background
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Column
 import androidx.glance.layout.Row
-import androidx.glance.layout.fillMaxHeight
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.height
 import androidx.glance.layout.padding
-import androidx.glance.layout.width
 import androidx.glance.layout.wrapContentSize
-import androidx.glance.layout.wrapContentWidth
 import androidx.glance.preview.ExperimentalGlancePreviewApi
 import androidx.glance.preview.Preview
 import androidx.glance.text.FontFamily
@@ -35,7 +32,6 @@ import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import io.hammerhead.karooext.models.ViewConfig
 import kotlin.math.ceil
-import kotlin.math.roundToInt
 
 private fun mapDegreesToCardinal(degrees: Int): String {
     return when (degrees) {
