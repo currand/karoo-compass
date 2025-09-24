@@ -1,10 +1,10 @@
-package com.currand60.karooexttemplate
+package com.currand60.karoocompass
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.currand60.karooexttemplate.screens.MainScreen
-import com.currand60.karooexttemplate.theme.AppTheme
+import com.currand60.karoocompass.screens.MainScreen
+import com.currand60.karoocompass.theme.AppTheme
 import io.hammerhead.karooext.BuildConfig
 import timber.log.Timber
 

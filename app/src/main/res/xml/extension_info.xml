@@ -5,9 +5,21 @@
     id="template-id"
     scansDevices="false">
     <DataType
-        typeId="template-datatype"
-        description="@string/datatype_description"
-        displayName="@string/datatype_title"
+        typeId="degrees"
+        description="@string/degrees_description"
+        displayName="@string/degrees_title"
+        graphical="false"
+        icon="@drawable/ic_launcher_foreground" />
+    <DataType
+        typeId="cardinaldirection"
+        description="@string/cardinaldirection_description"
+        displayName="@string/cardinaldirection_title"
         graphical="true"
+        icon="@drawable/ic_launcher_foreground" />
+    <DataType
+        typeId="grade"
+        description="@string/pitch_description"
+        displayName="@string/pitch_title"
+        graphical="false"
         icon="@drawable/ic_launcher_foreground" />
 </ExtensionInfo>

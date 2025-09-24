@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".TemplateApplication"
+        android:name=".CompassApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,14 +14,14 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.currand60.karooexttemplate.MAIN" />
+                <action android:name="com.currand60.karoocompass.MAIN" />
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service
-            android:name=".extension.TemplateExtension"
+            android:name=".extension.CompassExtension"
             android:exported="true"
             tools:ignore="ExportedService">
             <intent-filter>
@@ -33,7 +33,7 @@
         </service>
         <meta-data
             android:name="io.hammerhead.karooext.MANIFEST_URL"
-            android:value="https://github.com/currand/karoo-ext-template/releases/latest/download/manifest.json" />
+            android:value="https://github.com/currand/karoo-compass/releases/latest/download/manifest.json" />
     </application>
 
 </manifest>

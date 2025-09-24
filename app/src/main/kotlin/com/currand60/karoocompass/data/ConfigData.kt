@@ -1,7 +1,7 @@
-package com.currand60.karooexttemplate.data
+package com.currand60.karoocompass.data
 
 data class ConfigData(
-    val exampleValue: Boolean,
+    val pitchOffset: Float,
 ) {
     companion object {
         /**
@@ -9,11 +9,7 @@ data class ConfigData(
          * These are used when no settings are found or when resetting to defaults.
          */
         val DEFAULT = ConfigData(
-            exampleValue = true,
+            pitchOffset = 0.0f,
         )
-    }
-
-    fun validate(): Boolean {
-        return exampleValue == true
     }
 }

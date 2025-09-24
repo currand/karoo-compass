@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">template</string>
-    <string name="hello_karoo">Hello Karoo!</string>
-    <string name="extension_name">template</string>
-    <string name="datatype_title">template</string>
-    <string name="datatype_description">template</string>
+    <string name="app_name">Karoo Compass</string>
+    <string name="extension_name">Karoo Compass</string>
+    <string name="degrees_title">Degrees</string>
+    <string name="degrees_description">Direction in degrees</string>
+    <string name="cardinaldirection_title">Cardinal Direction</string>
+    <string name="cardinaldirection_title_short">Heading</string>
+    <string name="cardinaldirection_description">Current heading in cardinal direction</string>
+    <string name="pitch_title">% Grade</string>
+    <string name="pitch_title_short">Grade</string>
+    <string name="pitch_description">Current grade using titl sensor</string>
 </resources>

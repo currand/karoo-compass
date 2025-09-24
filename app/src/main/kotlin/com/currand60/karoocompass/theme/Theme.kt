@@ -1,4 +1,4 @@
-package com.currand60.karooexttemplate.theme
+package com.currand60.karoocompass.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable

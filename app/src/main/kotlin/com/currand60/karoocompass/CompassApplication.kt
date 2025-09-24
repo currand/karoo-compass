@@ -1,8 +1,9 @@
-package com.currand60.karooexttemplate
+package com.currand60.karoocompass
 
 import android.app.Application
 import android.content.Context
-import com.currand60.karooexttemplate.managers.ConfigurationManager
+import com.currand60.karoocompass.data.CompassProvider
+import com.currand60.karoocompass.managers.ConfigurationManager
 import io.hammerhead.karooext.KarooSystemService
 import io.hammerhead.karooext.models.OnStreamState
 import io.hammerhead.karooext.models.RideState
@@ -72,16 +73,17 @@ class KarooSystemServiceProvider(private val context: Context) {
 val appModule = module {
     singleOf(::ConfigurationManager)
     singleOf(::KarooSystemServiceProvider)
+    single {CompassProvider(androidContext(), "karoocompass") }
 }
 
-class TemplateApplication: Application() {
+class CompassApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
 
         startKoin {
             androidLogger()
-            androidContext(this@TemplateApplication)
+            androidContext(this@CompassApplication)
             modules(appModule)
         }
     }

@@ -1,12 +1,12 @@
-package com.currand60.karooexttemplate.managers
+package com.currand60.karoocompass.managers
 
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.currand60.karooexttemplate.data.ConfigData
+import com.currand60.karoocompass.data.ConfigData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
@@ -21,13 +21,13 @@ class ConfigurationManager (
 
 
     companion object {
-        private val EXAMPLE_VALUE_KEY = booleanPreferencesKey("exampleValue")
+        private val PITCH_OFFSET_KEY = floatPreferencesKey("pitchOffset")
     }
 
     suspend fun saveConfig(config: ConfigData) {
         Timber.d("Attempting to save configuration to DataStore: $config")
         context.dataStore.edit { preferences ->
-            preferences[EXAMPLE_VALUE_KEY] = config.exampleValue
+            preferences[PITCH_OFFSET_KEY] = config.pitchOffset
         }
         Timber.i("Configuration successfully saved to DataStore.")
     }
@@ -36,7 +36,7 @@ class ConfigurationManager (
         Timber.d("Attempting to retrieve configuration from DataStore.")
         return context.dataStore.data.map { preferences ->
             val config = ConfigData(
-                exampleValue = preferences[EXAMPLE_VALUE_KEY] ?: ConfigData.DEFAULT.exampleValue,
+                pitchOffset = preferences[PITCH_OFFSET_KEY] ?: ConfigData.DEFAULT.pitchOffset,
             )
             Timber.d("Retrieved configuration: $config")
             config
@@ -46,7 +46,7 @@ class ConfigurationManager (
     fun getConfigFlow(): Flow<ConfigData> {
         return context.dataStore.data.map { preferences ->
             ConfigData(
-                exampleValue = preferences[EXAMPLE_VALUE_KEY] ?: ConfigData.DEFAULT.exampleValue,
+                pitchOffset = preferences[PITCH_OFFSET_KEY] ?: ConfigData.DEFAULT.pitchOffset,
                 )
         }.distinctUntilChanged()
     }

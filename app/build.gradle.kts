@@ -14,11 +14,11 @@ kotlin {
 }
 
 android {
-    namespace = "com.currand60.karooexttemplate"
+    namespace = "com.currand60.karoocompass"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.currand60.karooexttemplate"
+        applicationId = "com.currand60.karoocompass"
         minSdk = 23
         targetSdk = 34
         versionCode = 25092201
