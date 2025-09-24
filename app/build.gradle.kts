@@ -21,8 +21,8 @@ android {
         applicationId = "com.currand60.karoocompass"
         minSdk = 23
         targetSdk = 34
-        versionCode = 25092401
-        versionName = "0.0.2"
+        versionCode = 25092403
+        versionName = "0.0.3"
         signingConfig = signingConfigs.getByName("debug")
 
     }
@@ -70,13 +70,13 @@ tasks.register("generateManifest") {
     doLast {
         val manifestFile = file("$projectDir/manifest.json")
         val manifest = mapOf(
-            "label" to "Karoo Template",
+            "label" to "Karoo Compass",
             "packageName" to android.namespace,
-            "latestApkUrl" to "https://github.com/currand/karoo-ext-template/releases/latest/download/app-release.apk",
+            "latestApkUrl" to "https://github.com/currand/karoo-compass/releases/latest/download/app-release.apk",
             "latestVersion" to android.defaultConfig.versionName,
             "latestVersionCode" to android.defaultConfig.versionCode,
             "developer" to "currand",
-            "description" to "Template Karoo Extension",
+            "description" to "Use native device sensors for heading and pitch (grade)",
 //            "screenshotUrls" to listOf(
 //                "https://github.com/currand/karoo-colorspeed/releases/latest/download/example1.png",
 //                "https://github.com/currand/karoo-colorspeed/releases/latest/download/example2.png",
