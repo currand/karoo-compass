@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ExtensionInfo
     displayName="@string/extension_name"
-    icon="@drawable/ic_launcher_foreground"
-    id="template-id"
+    icon="@drawable/explore_24px"
+    id="karoocompass"
     scansDevices="false">
     <DataType
         typeId="degrees"
         description="@string/degrees_description"
         displayName="@string/degrees_title"
         graphical="false"
-        icon="@drawable/ic_launcher_foreground" />
+        icon="@drawable/elevation_24px" />
     <DataType
         typeId="cardinaldirection"
         description="@string/cardinaldirection_description"
         displayName="@string/cardinaldirection_title"
         graphical="true"
-        icon="@drawable/ic_launcher_foreground" />
+        icon="@drawable/explore_24px" />
     <DataType
         typeId="grade"
         description="@string/pitch_description"
         displayName="@string/pitch_title"
         graphical="false"
-        icon="@drawable/ic_launcher_foreground" />
+        icon="@drawable/explore_24px" />
 </ExtensionInfo>

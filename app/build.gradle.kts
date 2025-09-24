@@ -21,8 +21,8 @@ android {
         applicationId = "com.currand60.karoocompass"
         minSdk = 23
         targetSdk = 34
-        versionCode = 25092201
-        versionName = "0.0.0"
+        versionCode = 25092401
+        versionName = "0.0.2"
         signingConfig = signingConfigs.getByName("debug")
 
     }

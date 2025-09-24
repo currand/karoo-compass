@@ -13,7 +13,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import timber.log.Timber
 import kotlin.math.roundToInt
 
 class CompassProvider(
@@ -107,7 +106,6 @@ class CompassProvider(
                 if (success) {
                     SensorManager.getOrientation(rotationMatrix, orientationAngles)
                     var azimuth = Math.toDegrees(orientationAngles[0].toDouble()).toFloat()
-                    Timber.d("Raw azimuth: $azimuth")
                     if (azimuth < 0) {
                         azimuth += 360f // Normalize negative angles (e.g., -90 becomes 270)
                     }

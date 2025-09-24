@@ -5,6 +5,7 @@ import com.currand60.karoocompass.data.CardinalDirectionDataType
 import com.currand60.karoocompass.data.CompassProvider
 import com.currand60.karoocompass.data.DegreesDataType
 import com.currand60.karoocompass.data.PitchDataType
+import com.currand60.karoocompass.managers.ConfigurationManager
 import io.hammerhead.karooext.extension.KarooExtension
 import org.koin.android.ext.android.inject
 import timber.log.Timber
@@ -14,12 +15,13 @@ class CompassExtension : KarooExtension("karoocompass", "1.0") {
 
     private val karooSystem: KarooSystemServiceProvider by inject()
     private val compassProvider: CompassProvider by inject()
+    private val configManager: ConfigurationManager by inject()
 
     override val types by lazy {
         listOf(
             DegreesDataType(extension, compassProvider),
             CardinalDirectionDataType(extension, compassProvider),
-            PitchDataType(extension, compassProvider)
+            PitchDataType(extension, compassProvider, configManager)
         )
     }
 

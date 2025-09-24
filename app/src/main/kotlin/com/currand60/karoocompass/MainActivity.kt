@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.currand60.karoocompass.screens.MainScreen
 import com.currand60.karoocompass.theme.AppTheme
-import io.hammerhead.karooext.BuildConfig
+import com.currand60.karoocompass.BuildConfig
 import timber.log.Timber
 
 class MainActivity : ComponentActivity() {

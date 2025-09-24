@@ -108,7 +108,7 @@ fun CardinalView (
                             .wrapContentSize()
                             .padding(end = 2.dp, top = 4.dp),
                         provider = ImageProvider(
-                            resId = R.drawable.compass,
+                            resId = R.drawable.explore_24px,
                         ),
                         contentDescription =context.getString(R.string.cardinaldirection_title),
                         colorFilter = ColorFilter.tint(ColorProvider(Color(context.getColor(R.color.icon_green))))

@@ -16,7 +16,7 @@ import timber.log.Timber
 @OptIn(ExperimentalGlanceRemoteViewsApi::class)
 class DegreesDataType (
     extension: String,
-    private val compassProvider: CompassProvider
+    private val compassProvider: CompassProvider,
 ) : DataTypeImpl(extension, TYPE_ID) {
 
     companion object {
